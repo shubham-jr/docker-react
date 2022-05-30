@@ -11,10 +11,7 @@ COPY --chown=node:node ./package.json ./
 RUN npm install -g npm@8.11.0
 
 # RUN chown node:node /home/node/app
-
-RUN sudo chown -R `whoami` ~/.npm
-RUN sudo chown -R `whoami` /usr/local/lib/node_modules
-RUN sudo chown -R `whoami` /usr/local/bin
+RUN sudo chown -R $USER /home/node/app
 
 RUN npm install --fetch-timeout=600000
 
