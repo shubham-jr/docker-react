@@ -11,7 +11,7 @@ COPY --chown=node:node ./package.json ./
 # RUN chown node:node /home/node/app
 
 # RUN npm install --fetch-timeout=600000
-RUN npm install 
+RUN npm install --unsafe-perm=true --allow-root
 
 COPY --chown=node:node . .
 
