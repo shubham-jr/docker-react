@@ -4,8 +4,6 @@ WORKDIR /usr/app
 
 COPY ./package.json ./
 
-RUN chown -R node.node /usr/app
-
 RUN npm install --fetch-timeout=600000
 
 COPY . .

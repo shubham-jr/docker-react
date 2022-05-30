@@ -8,6 +8,8 @@ RUN mkdir -p /home/node/app
 
 COPY --chown=node:node ./package.json ./
 
+RUN chown -R node.node /usr/app
+
 RUN npm install --fetch-timeout=600000
 
 COPY --chown=node:node . .
