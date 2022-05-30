@@ -8,8 +8,13 @@ RUN mkdir -p /home/node/app
 
 COPY --chown=node:node ./package.json ./
 
+RUN chown -R `whoami` ~/.npm
+RUN chown -R `whoami` /usr/local/lib/node_modules
+RUN chown -R `whoami` /usr/local/bin
+
 # RUN chown node:node /home/node/app
-RUN chown -R $USER /home/node/app
+
+
 
 RUN npm install --fetch-timeout=600000
 
