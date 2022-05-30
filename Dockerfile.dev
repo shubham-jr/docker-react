@@ -10,7 +10,8 @@ COPY --chown=node:node ./package.json ./
 
 # RUN chown node:node /home/node/app
 
-RUN npm install --fetch-timeout=600000
+# RUN npm install --fetch-timeout=600000
+RUN npm install 
 
 COPY --chown=node:node . .
 
