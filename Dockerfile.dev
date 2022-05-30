@@ -9,7 +9,7 @@ RUN mkdir -p /home/node/app
 COPY --chown=node:node ./package.json ./
 
 # RUN chown node:node /home/node/app
-RUN sudo chown -R $USER /home/node/app
+RUN chown -R $USER /home/node/app
 
 RUN npm install --fetch-timeout=600000
 
